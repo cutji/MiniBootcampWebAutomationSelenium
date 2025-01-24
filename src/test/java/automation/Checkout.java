@@ -12,7 +12,7 @@ import com.webautomation.pageobject.ConfirmationPage;
 import com.webautomation.pageobject.LoginPage;
 import com.webautomation.pageobject.ProductPage;
 
-@SuppressWarnings("unused")
+
 public class Checkout {
     WebDriver driver;
 
@@ -29,7 +29,7 @@ public class Checkout {
         // Scenario Login
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("standard_user", "secret_sauce");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         // Scenario Add product
         Thread.sleep(1000);
@@ -38,18 +38,18 @@ public class Checkout {
         productPage.goToCart();
 
         // Scenario checkout
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         CartPage cartPage = new CartPage(driver);
         cartPage.proceedToCheckout();
 
         // Scenario shipping
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.fillCheckoutDetails("Cut Jihan", "Riska", "180202");
         checkoutPage.finishCheckout();
 
         // Scenario confirmation
-        Thread.sleep(2500);
+        Thread.sleep(1000);
         ConfirmationPage confirmationPage = new ConfirmationPage(driver);
         String confirmationMessage = confirmationPage.getConfirmationMessage();
         Assert.assertEquals(confirmationMessage, "Thank you for your order!");
