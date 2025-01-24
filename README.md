@@ -1,1 +1,1 @@
-# MiniBootcampWebAutomationSelenium
+# Mini Bootcamp WebAutomation Selenium
